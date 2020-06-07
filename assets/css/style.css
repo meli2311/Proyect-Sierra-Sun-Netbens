@@ -78,10 +78,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(0, 123, 255, .1) !important;
 }
 
-.avatar {
-  max-width: 35px;
-}
-
 .btn-primary {
   background-color: rgba(0, 123, 255, .1) !important;
   border: 0;
@@ -100,24 +96,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: auto;
   height: 100vh;
 }
-table {
-  border-collapse: separate;
-  border-spacing: 0 .5rem;
-}
-
-table thead th {
-  border: 0 !important;
-}
-
-table tbody tr {
-  background-color: var(--light);
-}
-
-table tbody td {
-  border-top: 0 !important;
-  line-height: 1.2;
-}
-
 
 @media (min-width: 768px) {
   #sidebar-container {
@@ -139,4 +117,28 @@ table tbody td {
 .container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
+}
+
+.card-chart .chart-area {
+    height: 220px;
+    width: 100%;
+}
+
+.btn-group{
+  float: right !important;
+}
+.btns-custom {
+  background: transparent !important;
+  color: whitesmoke;
+}
+.btns-custom:not(:disabled):not(.disabled).active,
+.btns-custom:not(:disabled):not(.disabled):active, .show>
+.btns-custom.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(251, 48, 48);
+    border-color: #ff0000;
+}
+
+.btns-custom:hover{
+  background: firebrick !important;
 }

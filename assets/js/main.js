@@ -3,7 +3,8 @@ $("#menu-toggle").click(function(e) {
   e.preventDefault();
   $("#content-wrapper").toggleClass("toggled");
 });
-/*Grphic Chartjs end*/
+
+/*Graphic Chartjs end*/
 gradientChartOptionsConfiguration =  {
   maintainAspectRatio: false,
   legend: {
