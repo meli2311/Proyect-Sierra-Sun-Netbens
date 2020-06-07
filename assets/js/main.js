@@ -3,8 +3,7 @@ $("#menu-toggle").click(function(e) {
   e.preventDefault();
   $("#content-wrapper").toggleClass("toggled");
 });
-/*javascript init*/
-
+/*Grphic Chartjs end*/
 gradientChartOptionsConfiguration =  {
   maintainAspectRatio: false,
   legend: {
@@ -87,3 +86,4 @@ var myChart = new Chart(ctx, {
   data: data,
   options: gradientChartOptionsConfiguration
 });
+/*Graphic Chartjs end*/
