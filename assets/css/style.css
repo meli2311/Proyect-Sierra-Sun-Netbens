@@ -52,9 +52,18 @@ h1, h2, h3, h4, h5, h6 {
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
 }
-
+.cajaimage{
+  position: relative;
+  background:#B1B1B0;
+  width: 230px;
+  height: 150px;
+  border-radius: 0 0 500px 0;
+}
 #sidebar-container .logo{
-  padding: 0.875rem 1.25rem;
+  position: relative;
+  width: 350px;
+  padding-right: 150px;
+  padding-top: 24px;
 }
 
 #sidebar-container .menu {
