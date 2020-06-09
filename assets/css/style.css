@@ -75,11 +75,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: .5rem 1rem;
 }
 
-#content {
-  overflow-y: auto;
-  height: 100vh;
-}
-
 @media (min-width: 768px) {
   #sidebar-container {
     margin-left: 0;
@@ -98,28 +93,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*Sidebar styles end*/
+
 /*Styles container*/
 .container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
 }
 
-.card-chart .chart-area {
+.card-chart {
+  overflow: hidden;
+}
+
+/*.card-chart .chart-area {
   height: 220px;
   width: 100%;
+}*/
+#page-content-wrapper>.content {
+  padding: 80px 30px 30px 280px;
+  min-height: calc(100vh - 70px);
+}
+
+@media (min-width: 992px) {
+  .toggled #page-content-wrapper>#content, .toggled footer {
+        width: 99%;
+    ;
+  }
+}
+
+#content {
+  overflow-y: auto;
+  height: 100vh;
+  width: 98.8%;
+}
+
+@media (min-width: 1200px){
+.container {
+    max-width: 2560px;}
 }
 
 #Graphic-card {
-  position: absolute;
+  position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 /*Styles container end*/
 /*Butons styles*/
-
 .bg-primary, .badge-primary {
   background-color: rgba(0, 123, 255, .1) !important;
 }
@@ -158,15 +179,15 @@ h1, h2, h3, h4, h5, h6 {
   background: firebrick !important;
 }
 
-@media (min-width: 576px){
+@media (min-width: 576px) {
   .d-sm-none {
     display: none !important;
   }
 }
 
-@media (min-width: 576px){
-.d-sm-block {
-    display: block!important;
+@media (min-width: 576px) {
+  .d-sm-block {
+    display: block !important;
   }
 }
 
@@ -193,4 +214,5 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /*Butons styles*/
