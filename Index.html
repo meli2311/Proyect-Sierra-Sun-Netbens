@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
   <title>Project-Sierra Sun</title>
   <!--Required meta tags-->
   <meta charset="utf-8">
@@ -10,17 +11,21 @@
   <link rel="stylesheet" href="Boostrap\css\bootstrap.min.css">
   <!--Custom styles-->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/table-styles.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="Tables\datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="Tables\dataTables.bootstrap4.css">
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
   <div class="d-flex" id="content-wrapper">
+
     <!-- Sidebar -->
     <div id="sidebar-container" class="bg-light border-right">
-      <!--<img id="icons-sidebar" style="width: 290px; padding-right: 60px;" src="assets\img\Icon.png">-->
+      <!--<div class="logo">
+        <h4 class="font-weight-bold mb-0">Templune</h4>
+      </div>-->
       <div class="menu list-group-flush">
         <a href="#" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-home lead mr-2"></i> Inicio</a>
         <a href="#" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-user-circle lead mr-2"></i> Usuarios</a>
@@ -31,12 +36,13 @@
       </div>
     </div>
     <!-- Sidebar end-->
-    <!-- Page Content-->
-    <div id="page-content-wrapper" class="w-100 bg-dar-blue main" style="background: ">
-      <!--Nav bar content page-->
-      <header class="header container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom">
-          <button class="btn btn-outline-info text-white" id="menu-toggle"><i class="fas fa-bars"></i> Mostrar / esconder menu</button>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper" class="w-100 bg-light-blue">
+      <!-- Nav bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom">
+        <div class="container">
+          <button class="btn btn-outline-info text-white my-2 my-sm-0" id="menu-toggle"><i class="fas fa-bars"></i> Sidebar</button>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -47,9 +53,6 @@
                   <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" style="margin-bottom: 0px;">
                   <button class="btn btn-outline-info text-white my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link text-white" href="#">Inicio</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,13 +67,13 @@
               </li>
             </ul>
           </div>
-        </nav>
-      </header>
-      <!--Nav bar content page end-->
-      <!--Content body-page-->
-      <div class="content">
-        <div class="row">
-          <div class="col-12">
+        </div>
+      </nav>
+      <!-- Nav bar end -->
+      <div id="content" class="container-fluid">
+        <section class="py-3 ">
+          <!-- Graphic -->
+          <div class="row">
             <div class="card card-chart bg-dark" id="Graphic-card">
               <div class="card-header">
                 <div class="row" style="color: white;">
@@ -78,9 +81,7 @@
                     <h5 class="card-title" style="color: white">Titulo</h5>
                     <p class="card-text">Graphic</p>
                   </div>
-
-
-                  <div class="col-sm-6">
+                  <div class="col-sm-6" style="padding-right: 0px;">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-outline-danger btns-custom btn-simple active active-card">
                         <input type="radio" name="options" id="option1" checked>
@@ -105,8 +106,6 @@
                       </label>
                     </div>
                   </div>
-
-
                 </div>
               </div>
               <div class="card-body">
@@ -117,34 +116,156 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!--Content body-page end-->
-      <!--<div class="content">
-        <div class="row">
-          <div class="col-6">
+          <!-- Graphic end-->
 
+          <div class="row mb-3" style="background:">
+            <!-- Table -->
+            <div class="col-xl-7 col-lg-12">
+              <div class="table-responsive ">
+                <table class="table">
+                  <thead class="text-white bg-dark">
+                    <tr>
+                      <th colspan="2"><small class="font-weight-bold">Usuarios<small></th>
+                      <th scope="col"><small class="font-weight-bold">Estatus<small></th>
+                      <th scope="col"><small class="font-weight-bold">Activo hace<small></th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-white">
+                    <tr class="shadow-sm  bg-dark">
+                      <td><i class="fas fa-user-circle lead mr-2"></i></td>
+                      <td><span class="d-block">Cristian</span><small>cristian@templune.com</small>
+                      </td>
+                      <td class="align-middle"><span class="badge badge-primary text-white">Activo</span></td>
+                      <td class="align-middle"><span class="badge badge-secondary">
+                        <i class="fas fa-circle ml-1" style='font-size: 10px;'></i> Ahora</span>
+                      </td>
+                    </tr>
+                    <tr class="shadow-sm  bg-dark">
+                      <td><i class="fas fa-user-circle lead mr-2"></i></td>
+                      <td><span class="d-block">Diego</span><small>diego@templune.com</small></td>
+                      <td class="align-middle"><span class="badge badge-primary text-white">Inactivo</span></td>
+                      <td class="align-middle"><span class="badge badge-secondary">
+                        <i class="far fa-circle ml-1" style='font-size: 10px;'></i> 1d</span>
+                      </td>
+                    </tr>
+                    <tr class="shadow-sm  bg-dark">
+                      <td><i class="fas fa-user-circle lead mr-2"></i></td>
+                      <td><span class="d-block">Irina</span><small>irina@templune.com</small></td>
+                      <td class="align-middle"><span class="badge badge-primary text-white">Activo</span></td>
+                      <td class="align-middle"><span class="badge badge-secondary">
+                        <i class="	fas fa-circle ml-1" style='font-size: 10px;'></i> Ahora</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Table end -->
+
+            <!--message bar-->
+            <div class="col-xl-5 col-lg-12">
+              <div class="card text-white mb-5 shadow-sm shadow-hover bg-dark" style="border-color: white; border-radius: 8px;">
+                <div class="card-header text-white  border-0 pt-3 pb-0">
+                  <h6 class="text-white">Mensajes</h6>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex border-bottom py-3">
+                    <div class="mr-3">
+                      <i class="fas fa-user-circle lead mr-2"></i>
+                    </div>
+                    <div>
+                      <div class="d-flex">
+                        <p class="mb-0">Cristian Palacios</p>
+                        <small class="ml-auto">Hace 2 horas</small>
+                      </div>
+                      <small class="">Me podrías enviar la cotización de la aplicación.</small>
+                    </div>
+                  </div>
+
+                  <div class="d-flex border-bottom py-3">
+                    <div class="mr-3">
+                      <i class="fas fa-user-circle lead mr-2"></i>
+                    </div>
+                    <div>
+                      <div class="d-flex">
+                        <p class="mb-0">Adriana Arenas</p>
+                        <small class="ml-auto">Hace 2 horas</small>
+                      </div>
+                      <small class="">Hola, la junto de hoy es a las 10 en la oficina 2.</small>
+                    </div>
+                  </div>
+
+                  <div class="text-center pt-3">
+                    <button class="btn btn-outline-info text-white my-2 my-sm-0"><a class="text-white" href=""><small>Ver todos los mensajes</small></a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--message bar-->
           </div>
-        </div>
-      </div>-->
+          <!-- Table2 -->
+          <div class="row mb-5" style="background:">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <table id="table1" class="table cell-border dt-bootstrap4 bg-dark">
+                  <thead class="shorting-1">
+                    <tr class="cell-border">
+                      <th>Nombre</th>
+                      <th>Puesto</th>
+                      <th>Sucurrsal</th>
+                      <th>Edad</th>
+                      <th>Fecha de inicio</th>
+                      <th>Sueldo</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-dark">
+                    <tr>
+                      <td>Tiger Nixon</td>
+                      <td>Arquitecto de Sistemas</td>
+                      <td>Edinburgh</td>
+                      <td>61</td>
+                      <td>2011/04/25</td>
+                      <td>S/.320,800</td>
+                    </tr>
+                    <tr>
+                      <td>Garrett Winters</td>
+                      <td>Accountant</td>
+                      <td>Tokyo</td>
+                      <td>63</td>
+                      <td>2011/07/25</td>
+                      <td>$170,750</td>
+                    </tr>
+                    <tr>
+                      <td>Ashton Cox</td>
+                      <td>Junior Technical Author</td>
+                      <td>San Francisco</td>
+                      <td>66</td>
+                      <td>2009/01/12</td>
+                      <td>$86,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Table2 end -->
 
 
 
 
-
-
+        </section>
+      </div>
     </div>
-    <!-- Page Content end-->
 
 
 
-
-
-
-
+    <!-- Fin Page Content -->
   </div>
 
 
+
+
+  <!-- Fin wrapper -->
 
   <!--Vue.js-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -156,7 +277,8 @@
   <script src="assets\js\main.js"></script>
   <script src="assets\js\graphics.js"></script>
   <!--Customise scripts-->
-
+  <script type="text/javascript" src="Tables\datatables.min.js"></script>
+  <script type="text/javascript" src="Tables\dataTables.bootstrap4.js"></script>
   <!--icons-->
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
