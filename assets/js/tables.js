@@ -6,7 +6,7 @@ $(document).ready(function() {
           "zeroRecords": "No se encontro elemento",
           "info": "Pagina _PAGE_ de _PAGES_",
           "infoEmpty": "No hay datos disponibles",
-          "infoFiltered": "(Se econtraron 0 elementos de _MAX_)",
+          "infoFiltered": "(Se econtraron _TOTAL_ elementos de _MAX_ )",
           "sSearch": "Buscar",
           "oPaginate": {
             "sFirst": "Primero",
