@@ -10,7 +10,7 @@ package Include;
  * @author Renzo
  */
 public class Articulo {
-    
+   
     private int Codigo_A;
     private String Nombre;
     private int Stock;
@@ -30,8 +30,7 @@ public class Articulo {
         this.Stock_maximo = Stock_maximo;
     }
     
-    
-    
+  
     /**
      * @return the Codigo_A
      */
@@ -103,20 +102,17 @@ public class Articulo {
     }
 
     /**
-     * @return the Permisos
+     * @return the Stock_maximo
      */
     public int getStock_maximo() {
         return Stock_maximo;
     }
 
     /**
-     * @param Permisos the Permisos to set
+     * @param Stock_maximo the Stock_maximo to set
      */
     public void setStock_maximo(int Stock_maximo) {
         this.Stock_maximo = Stock_maximo;
     }
 
-    
-    
-    
 }

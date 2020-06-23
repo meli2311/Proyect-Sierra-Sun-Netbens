@@ -24,15 +24,15 @@
     <!-- Sidebar -->
     <div id="sidebar-container" class="bg-light border-right">
       <!--<div class="logo">
-        <h4 class="font-weight-bold mb-0">Templune</h4>
+                  <h4 class="font-weight-bold mb-0">Templune</h4>
       </div>-->
       <div class="menu list-group-flush">
-        <a href="Index.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-home lead mr-2"></i> Inicio</a>
-        <a href="finances.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-poll lead mr-2"></i> Estad铆sticas</a>
+        <a href="Index.jsp" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-home lead mr-2"></i> Inicio</a>
+        <a href="finances.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-poll lead mr-2"></i> Estad韘ticas</a>
         <a href="events.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="far fa-calendar-alt lead mr-2"></i> Eventos</a>
         <a href="E-mail.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-envelope-open lead mr-2"></i> Bandeja de entrada</a>
         <a href="requesment.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"><i class="fas fa-database lead mr-2"></i>Requerimientos</a>
-        <a href="settings.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"> <i class="	fas fa-cogs lead mr-2"></i> Configuraci贸n</a>
+        <a href="settings.html" class="list-group-item list-group-item-action text-muted bg-light p-3 border-0"> <i class="	fas fa-cogs lead mr-2"></i> Configuraci髇</a>
       </div>
     </div>
     <!-- Sidebar end-->
@@ -62,7 +62,7 @@
                   <a class="dropdown-item" href="#">Mi perfil</a>
                   <a class="dropdown-item" href="#">Archivos</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="Login.html">Cerrar sesi贸n</a>
+                  <a class="dropdown-item" href="Login.html">Cerrar sesi髇</a>
                 </div>
               </li>
             </ul>
@@ -138,7 +138,7 @@
                       </td>
                       <td class="align-middle"><span class="badge badge-primary text-white">Activo</span></td>
                       <td class="align-middle"><span class="badge badge-secondary">
-                        <i class="fas fa-circle ml-1" style='font-size: 10px;'></i> Ahora</span>
+                          <i class="fas fa-circle ml-1" style='font-size: 10px;'></i> Ahora</span>
                       </td>
                     </tr>
                     <tr class="shadow-sm  bg-dark">
@@ -146,7 +146,7 @@
                       <td><span class="d-block">Diego</span><small>diego@templune.com</small></td>
                       <td class="align-middle"><span class="badge badge-primary text-white">Inactivo</span></td>
                       <td class="align-middle"><span class="badge badge-secondary">
-                        <i class="far fa-circle ml-1" style='font-size: 10px;'></i> 1d</span>
+                          <i class="far fa-circle ml-1" style='font-size: 10px;'></i> 1d</span>
                       </td>
                     </tr>
                     <tr class="shadow-sm  bg-dark">
@@ -154,7 +154,7 @@
                       <td><span class="d-block">Irina</span><small>irina@templune.com</small></td>
                       <td class="align-middle"><span class="badge badge-primary text-white">Activo</span></td>
                       <td class="align-middle"><span class="badge badge-secondary">
-                        <i class="	fas fa-circle ml-1" style='font-size: 10px;'></i> Ahora</span>
+                          <i class="	fas fa-circle ml-1" style='font-size: 10px;'></i> Ahora</span>
                       </td>
                     </tr>
                   </tbody>
@@ -179,7 +179,7 @@
                         <p class="mb-0">Cristian Palacios</p>
                         <small class="ml-auto">Hace 2 horas</small>
                       </div>
-                      <small class="">Me podr铆as enviar la cotizaci贸n de la aplicaci贸n.</small>
+                      <small class="">Me podr韆s enviar la cotizaci髇 de la aplicaci髇.</small>
                     </div>
                   </div>
 
@@ -242,11 +242,11 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <form class="needs-validation" novalidate>
+                                  <form action="CArticol" name="frmnew" method="POST" enctype="multipart/form-data" id="" class="needs-validation" novalidate>
                                   <div class="form-row">
                                     <div class="col-md-6 mb-3">
                                       <label for="validationCustom01">Nombre del Articulo</label>
-                                      <input type="text" class="form-control" id="validationCustom01" required>
+                                      <input type="text" class="form-control" name="Nombre" id="Nombre" required>
                                       <div class="valid-feedback">
                                         Correcto
                                       </div>
@@ -256,7 +256,7 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                       <label for="validationCustom03">Estado</label>
-                                      <input type="text" class="form-control" id="validationCustom03" required>
+                                      <input type="text" class="form-control" name="Estado" id="Estado" required>
                                       <div class="invalid-feedback">
                                         Describa el estado del producto.
                                       </div>
@@ -265,18 +265,17 @@
                                   <div class="form-row">
                                     <div class="col-md-6 mb-3">
                                       <label for="validationCustom03">Costo unitario</label>
-                                      <input type="text" class="form-control" id="validationCustom03" required>
+                                      <input type="text" class="form-control" name="Costo_Unidad" id="Costo_Unidad" required>
                                       <div class="invalid-feedback">
                                         Indicque el costo.
                                       </div>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                       <label for="validationCustom04">Stock</label>
-                                      <select class="custom-select" id="validationCustom04" required>
-                                        <option selected disabled value="">Elegir</option>
-                                        <option>10</option>
-                                        <option>20</option>
-                                        <option>30</option>
+                                      <select class="custom-select" id="Stock" name="Stock" required>
+                                        <%for (int i = 1; i <= 100; i++) {%>
+                                        <option selected value="<%= i%>"><%= i%></option>
+                                        <%}%>
                                       </select>
                                       <div class="invalid-feedback">
                                         Indique el stock.
@@ -284,7 +283,7 @@
                                     </div>
                                     <div class="col-md-3 mb-3">
                                       <label for="validationCustom04">Stock Maximo</label>
-                                      <select class="custom-select" id="validationCustom04" required>
+                                      <select class="custom-select" id="Stock_maximo" name="Stock_maximo" required>
                                         <option selected disabled value="">Elegir</option>
                                         <option>10</option>
                                         <option>20</option>
@@ -295,7 +294,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <button class="btn btn-outline-info " type="submit">Actualizar</button>
+                                      <button class="btn btn-outline-info " type="submit" value="N_Articol" id="btnCrear">Actualizar</button>
                                 </form>
                               </div>
                               <div class="modal-footer">
@@ -318,7 +317,6 @@
     </div>
     <!-- Page Content end -->
   </div>
-  <!-- Fin wrapper end -->
 
   <!--Vue.js-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -336,4 +334,5 @@
   <!--icons-->
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
+
 </html>

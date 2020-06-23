@@ -39,9 +39,9 @@ public class ModeloArticulos extends Conexion {
         return flag;
     }
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ModeloArticulos mp=new ModeloArticulos();
         System.out.println(mp.crear_articulo(new Articulo(0, "aca nombre", 0, "aca estado", 0, 0)));
         
-    }
+    }*/
 }
