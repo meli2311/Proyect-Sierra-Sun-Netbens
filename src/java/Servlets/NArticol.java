@@ -47,19 +47,17 @@ public class NArticol extends HttpServlet {
         try {
             List items= sfu.parseRequest(request);
             for (int i = 0; i <  items.size(); i++) {
-                FileItem item=(FileItem) items.get(i);
-                
-                
+                FileItem item=(FileItem) items.get(i);                     
                 campos.add(item.getString());
             }
         } catch (Exception ex) {
         }
         
-       Articulo art=new Articulo(0, campos.get(0), Integer.parseInt(campos.get(3)), campos.get(1), Integer.parseInt(campos.get(2)), Integer.parseInt(campos.get(4)));
+       Articulo art=new Articulo(1, campos.get(0), Integer.parseInt(campos.get(3)), campos.get(1), Integer.parseInt(campos.get(2)), Integer.parseInt(campos.get(4)));
        
        CArticulos ca=new CArticulos();
        
-        response.getWriter().println(ca.crearArticulo(art));
+       response.getWriter().println(ca.crearArticulo(art));
         
     }
 

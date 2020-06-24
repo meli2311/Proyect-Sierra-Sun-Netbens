@@ -223,10 +223,10 @@
                                   </button>
                               </div>
                               <div class="modal-body">
-                                  <form class="needs-validation" novalidate>
+                                  <form class="needs-validation" method="POST" enctype="multipart/form-data" action="CArticol" name="frmnew" id="" novalidate>
                                       <div class="form-row">
                                           <div class="col-md-6 mb-3">
-                                              <label for="validationCustom01">Nombre del Articulo</label>
+                                              <label for="validationCustom01">Nombre</label>
                                               <input type="text" class="form-control" id="Nombre" name="Nombre" required>
                                               <div class="valid-feedback">
                                                   Correcto
@@ -254,7 +254,7 @@
                                           <div class="col-md-3 mb-3">
                                               <label for="validationCustom04">Stock</label>
                                               <select class="custom-select" id="Stock" name="Stock" required>
-                                                  <%for (int i = 1; i <= 100; i++) {%>
+                                                  <%for (int i = 1; i <= 1000; i++) {%>
                                                   <option selected value="<%= i%>"><%= i%></option>
                                                   <%}%>
                                               </select>
@@ -266,7 +266,7 @@
                                               <label for="validationCustom04">Stock Maximo</label>
                                               <select class="custom-select" id="Stock_maximo" name="Stock_maximo" required>
                                                   <option selected disabled value="">Elegir</option>
-                                                  <%for (int i = 1; i <= 100; i++) {%>
+                                                  <%for (int i = 1; i <= 1000; i++) {%>
                                                   <option selected value="<%= i%>"><%= i%></option>
                                                   <%}%>
                                               </select>
@@ -275,7 +275,7 @@
                                               </div>
                                           </div>
                                       </div>
-                                      <button class="btn btn-outline-info " type="submit">Actualizar</button>
+                                              <button class="btn btn-outline-info" value="CArticol" id="btnnewartic" type="submit">Actualizar</button>
                                   </form>
                               </div>
                               <div class="modal-footer">
@@ -302,7 +302,7 @@
                               <%
                                   CArticulos ca = new CArticulos();
                               %>
-                              <%=  ca.getViewArticol()%>
+                              <%= ca.getViewArticol()%>
                           </tbody>
                       </table>
                   </div>
