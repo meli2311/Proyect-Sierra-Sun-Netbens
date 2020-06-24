@@ -1,3 +1,4 @@
+<%@page import="Controlador.CArticulos"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,111 +206,107 @@
             <!--message bar-->
 
           </div>
+          
+
 
           <!-- Table2 -->
           <div class="row mb-5" style="background:">
-            <div class="col-lg-12">
-              <div class="table-responsive">
-                <table id="table1" class="table table-striped table-bordered bg-dark">
-                  <thead class="shorting-1">
-                    <tr class="cell-border">
-                      <th>Id_Articulo</th>
-                      <th>Nombre</th>
-                      <th>Stock</th>
-                      <th>Estado</th>
-                      <th>Costo unitario</th>
-                      <th>Stock maximo</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-dark">
-                    <tr>
-                      <td>1</td>
-                      <td>Pala</td>
-                      <td>10</td>
-                      <td>Disponible</td>
-                      <td>S/.20</td>
-                      <td>200</td>
-                      <td>
-                        <button type="button" class="btn btn-outline-info text-white" data-toggle="modal" data-target="#EditModal">Editar</button>
-                        <div class="modal fade" id="EditModal" tabindex="-1" role="dialog">
-                          <div class="modal-dialog ">
-                            <div class="modal-content  bg-dark">
+              <div class="col-lg-12">
+                  <button type="button" class="btn btn-outline-info text-dark" data-toggle="modal" data-target="#EditModal">Nuevo</button>
+                  <div class="modal fade" id="EditModal" tabindex="-1" role="dialog">
+                      <div class="modal-dialog ">
+                          <div class="modal-content  bg-dark">
                               <div class="modal-header">
-                                <h5 class="modal-title text-white" id="exampleModalLabel">Editar</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
+                                  <h5 class="modal-title text-white" id="exampleModalLabel">Nuevo</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
                               </div>
                               <div class="modal-body">
-                                  <form action="CArticol" name="frmnew" method="POST" enctype="multipart/form-data" id="" class="needs-validation" novalidate>
-                                  <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                      <label for="validationCustom01">Nombre del Articulo</label>
-                                      <input type="text" class="form-control" name="Nombre" id="Nombre" required>
-                                      <div class="valid-feedback">
-                                        Correcto
+                                  <form class="needs-validation" novalidate>
+                                      <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                              <label for="validationCustom01">Nombre del Articulo</label>
+                                              <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+                                              <div class="valid-feedback">
+                                                  Correcto
+                                              </div>
+                                              <div class="invalid-feedback">
+                                                  Indique el nombre
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6 mb-3">
+                                              <label for="validationCustom03">Estado</label>
+                                              <input type="text" class="form-control" id="Estado" name="Estado" required>
+                                              <div class="invalid-feedback">
+                                                  Describa el estado del producto.
+                                              </div>
+                                          </div>
                                       </div>
-                                      <div class="invalid-feedback">
-                                        Indique el nombre
+                                      <div class="form-row">
+                                          <div class="col-md-6 mb-3">
+                                              <label for="validationCustom03">Costo unitario</label>
+                                              <input type="text" class="form-control" id="Costo_Unitario" name="Costo_Unitario" required>
+                                              <div class="invalid-feedback">
+                                                  Indicque el costo.
+                                              </div>
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                              <label for="validationCustom04">Stock</label>
+                                              <select class="custom-select" id="Stock" name="Stock" required>
+                                                  <%for (int i = 1; i <= 100; i++) {%>
+                                                  <option selected value="<%= i%>"><%= i%></option>
+                                                  <%}%>
+                                              </select>
+                                              <div class="invalid-feedback">
+                                                  Indique el stock.
+                                              </div>
+                                          </div>
+                                          <div class="col-md-3 mb-3">
+                                              <label for="validationCustom04">Stock Maximo</label>
+                                              <select class="custom-select" id="Stock_maximo" name="Stock_maximo" required>
+                                                  <option selected disabled value="">Elegir</option>
+                                                  <%for (int i = 1; i <= 100; i++) {%>
+                                                  <option selected value="<%= i%>"><%= i%></option>
+                                                  <%}%>
+                                              </select>
+                                              <div class="invalid-feedback">
+                                                  Indique el stock maximo.
+                                              </div>
+                                          </div>
                                       </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                      <label for="validationCustom03">Estado</label>
-                                      <input type="text" class="form-control" name="Estado" id="Estado" required>
-                                      <div class="invalid-feedback">
-                                        Describa el estado del producto.
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                      <label for="validationCustom03">Costo unitario</label>
-                                      <input type="text" class="form-control" name="Costo_Unidad" id="Costo_Unidad" required>
-                                      <div class="invalid-feedback">
-                                        Indicque el costo.
-                                      </div>
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                      <label for="validationCustom04">Stock</label>
-                                      <select class="custom-select" id="Stock" name="Stock" required>
-                                        <%for (int i = 1; i <= 100; i++) {%>
-                                        <option selected value="<%= i%>"><%= i%></option>
-                                        <%}%>
-                                      </select>
-                                      <div class="invalid-feedback">
-                                        Indique el stock.
-                                      </div>
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                      <label for="validationCustom04">Stock Maximo</label>
-                                      <select class="custom-select" id="Stock_maximo" name="Stock_maximo" required>
-                                        <option selected disabled value="">Elegir</option>
-                                        <option>10</option>
-                                        <option>20</option>
-                                        <option>30</option>
-                                      </select>
-                                      <div class="invalid-feedback">
-                                        Indique el stock maximo.
-                                      </div>
-                                    </div>
-                                  </div>
-                                      <button class="btn btn-outline-info " type="submit" value="N_Articol" id="btnCrear">Actualizar</button>
-                                </form>
+                                      <button class="btn btn-outline-info " type="submit">Actualizar</button>
+                                  </form>
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-info " data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-outline-info ">Enviar mensaje</button>
+                                  <button type="button" class="btn btn-outline-info " data-dismiss="modal">Cerrar</button>
+                                  <button type="button" class="btn btn-outline-info ">Enviar mensaje</button>
                               </div>
-                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                      </div>
+                  </div>
+                  <div class="table-responsive">
+                      <table id="table1" class="table table-striped table-bordered bg-dark">
+                          <thead class="shorting-1">
+                              <tr class="cell-border">
+                                  <th>Id_Articulo</th>
+                                  <th>Nombre</th>
+                                  <th>Stock</th>
+                                  <th>Estado</th>
+                                  <th>Costo unitario</th>
+                                  <th>Stock maximo</th>
+                                  <th>Acciones</th>
+                              </tr>
+                          </thead>
+                          <tbody class="bg-dark text-white">
+                              <%
+                                  CArticulos ca = new CArticulos();
+                              %>
+                              <%=  ca.getViewArticol()%>
+                          </tbody>
+                      </table>
+                  </div>
               </div>
-            </div>
           </div>
           <!-- Table2 end -->
         </section>

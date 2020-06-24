@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Controlador.CArticulos;
 
 public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -41,6 +42,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("\n");
@@ -68,9 +70,9 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <div id=\"sidebar-container\" class=\"bg-light border-right\">\n");
       out.write("      <!--<div class=\"logo\">\n");
       out.write("                  <h4 class=\"font-weight-bold mb-0\">Templune</h4>\n");
-      out.write("                </div>-->\n");
+      out.write("      </div>-->\n");
       out.write("      <div class=\"menu list-group-flush\">\n");
-      out.write("        <a href=\"Index.html\" class=\"list-group-item list-group-item-action text-muted bg-light p-3 border-0\"><i class=\"fas fa-home lead mr-2\"></i> Inicio</a>\n");
+      out.write("        <a href=\"Index.jsp\" class=\"list-group-item list-group-item-action text-muted bg-light p-3 border-0\"><i class=\"fas fa-home lead mr-2\"></i> Inicio</a>\n");
       out.write("        <a href=\"finances.html\" class=\"list-group-item list-group-item-action text-muted bg-light p-3 border-0\"><i class=\"fas fa-poll lead mr-2\"></i> Estadísticas</a>\n");
       out.write("        <a href=\"events.html\" class=\"list-group-item list-group-item-action text-muted bg-light p-3 border-0\"><i class=\"far fa-calendar-alt lead mr-2\"></i> Eventos</a>\n");
       out.write("        <a href=\"E-mail.html\" class=\"list-group-item list-group-item-action text-muted bg-light p-3 border-0\"><i class=\"fas fa-envelope-open lead mr-2\"></i> Bandeja de entrada</a>\n");
@@ -248,12 +250,21 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <!--message bar-->\n");
       out.write("\n");
       out.write("          </div>\n");
+      out.write("          \n");
+      out.write("          <!-- ");
+
+              CArticulos ca = new CArticulos();
+          
       out.write("\n");
-      out.write("          <!-- Table2 -->\n");
+      out.write("          ");
+      out.print(  ca.getViewArticol());
+      out.write("\n");
+      out.write("\n");
+      out.write("          <!-- Table2 --> -->\n");
       out.write("          <div class=\"row mb-5\" style=\"background:\">\n");
       out.write("            <div class=\"col-lg-12\">\n");
       out.write("              <div class=\"table-responsive\">\n");
-      out.write("                <table id=\"table1\" class=\"table table-striped table-bordered bg-dark\">\n");
+      out.write("                                  <table id=\"table1\" class=\"table table-striped table-bordered bg-dark\">\n");
       out.write("                  <thead class=\"shorting-1\">\n");
       out.write("                    <tr class=\"cell-border\">\n");
       out.write("                      <th>Id_Articulo</th>\n");
@@ -285,11 +296,11 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                </button>\n");
       out.write("                              </div>\n");
       out.write("                              <div class=\"modal-body\">\n");
-      out.write("                                  <form action=\"CArticol\" name=\"frmnew\" method=\"POST\" enctype=\"multipart/form-data\" id=\"\" class=\"needs-validation\" novalidate>\n");
+      out.write("                                <form class=\"needs-validation\" novalidate>\n");
       out.write("                                  <div class=\"form-row\">\n");
       out.write("                                    <div class=\"col-md-6 mb-3\">\n");
       out.write("                                      <label for=\"validationCustom01\">Nombre del Articulo</label>\n");
-      out.write("                                      <input type=\"text\" class=\"form-control\" name=\"Nombre\" id=\"Nombre\" required>\n");
+      out.write("                                      <input type=\"text\" class=\"form-control\" id=\"Nombre\" name=\"Nombre\" required>\n");
       out.write("                                      <div class=\"valid-feedback\">\n");
       out.write("                                        Correcto\n");
       out.write("                                      </div>\n");
@@ -299,7 +310,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    </div>\n");
       out.write("                                    <div class=\"col-md-6 mb-3\">\n");
       out.write("                                      <label for=\"validationCustom03\">Estado</label>\n");
-      out.write("                                      <input type=\"text\" class=\"form-control\" name=\"Estado\" id=\"Estado\" required>\n");
+      out.write("                                      <input type=\"text\" class=\"form-control\" id=\"Estado\" name=\"Estado\" required>\n");
       out.write("                                      <div class=\"invalid-feedback\">\n");
       out.write("                                        Describa el estado del producto.\n");
       out.write("                                      </div>\n");
@@ -308,7 +319,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                  <div class=\"form-row\">\n");
       out.write("                                    <div class=\"col-md-6 mb-3\">\n");
       out.write("                                      <label for=\"validationCustom03\">Costo unitario</label>\n");
-      out.write("                                      <input type=\"text\" class=\"form-control\" name=\"Costo_Unidad\" id=\"Costo_Unidad\" required>\n");
+      out.write("                                      <input type=\"text\" class=\"form-control\" id=\"Costo_Unidad\" name=\"Costo_Unidad\" required>\n");
       out.write("                                      <div class=\"invalid-feedback\">\n");
       out.write("                                        Indicque el costo.\n");
       out.write("                                      </div>\n");
@@ -346,7 +357,7 @@ for (int i = 1; i <= 100; i++) {
       out.write("                                      </div>\n");
       out.write("                                    </div>\n");
       out.write("                                  </div>\n");
-      out.write("                                      <button class=\"btn btn-outline-info \" type=\"submit\" value=\"N_Articol\" id=\"btnCrear\">Actualizar</button>\n");
+      out.write("                                  <button class=\"btn btn-outline-info \" type=\"submit\">Actualizar</button>\n");
       out.write("                                </form>\n");
       out.write("                              </div>\n");
       out.write("                              <div class=\"modal-footer\">\n");

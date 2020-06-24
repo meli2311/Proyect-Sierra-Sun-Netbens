@@ -7,6 +7,8 @@ package Modelo;
 
 import Include.Articulo;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 public class ModeloArticulos extends Conexion {
@@ -39,9 +41,31 @@ public class ModeloArticulos extends Conexion {
         return flag;
     }
     
-    /*public static void main(String[] args) {
-        ModeloArticulos mp=new ModeloArticulos();
-        System.out.println(mp.crear_articulo(new Articulo(0, "aca nombre", 0, "aca estado", 0, 0)));
-        
-    }*/
+    public ArrayList<Articulo> getAllArtic(){
+    ArrayList<Articulo> art=new ArrayList<>();
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+    
+        try {
+            String sql="call selectArtic()";
+            pst=getConnection().prepareCall(sql);
+            rs=pst.executeQuery();
+            
+            while (rs.next()) {                
+                art.add(new Articulo(rs.getInt("Codigo_A"),rs.getString("Nombre"),rs.getInt("Stock"), rs.getString("Estado"),rs.getInt("Costo_Unidad"),rs.getInt("Stock_maximo")));
+                
+            }
+        } catch (Exception e) {
+        }finally{
+            try {
+                if (getConnection() !=null) getConnection().close();
+                if (pst !=null) pst.close();
+                if (rs !=null) rs.close();
+            } catch (Exception e) {
+            }
+        }  
+    return art;
+    
+    }
+    
 }
