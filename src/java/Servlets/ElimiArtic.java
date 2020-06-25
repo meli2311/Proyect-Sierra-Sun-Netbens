@@ -6,24 +6,18 @@
 package Servlets;
 
 import Controlador.CArticulos;
-import Include.Articulo;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
  * @author Renzo
  */
-public class NArticol extends HttpServlet {
+public class ElimiArtic extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,28 +31,18 @@ public class NArticol extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      
-        FileItemFactory file_Factory=new DiskFileItemFactory();
-        ServletFileUpload sfu=new ServletFileUpload(file_Factory);
-        
-        ArrayList<String> campos=new ArrayList<>();
-        
-        
-        try {
-            List items= sfu.parseRequest(request);
-            for (int i = 0; i <  items.size(); i++) {
-                FileItem item=(FileItem) items.get(i);                     
-                campos.add(item.getString());
-            }
-        } catch (Exception ex) {
-        }
-        
-       Articulo art=new Articulo(0, campos.get(0), Integer.parseInt(campos.get(3)), campos.get(1), Integer.parseInt(campos.get(2)), Integer.parseInt(campos.get(4)));
-       
-       CArticulos ca=new CArticulos();
-       
-       response.getWriter().println(ca.crearArticulo(art));
-       
+
+        int idartic= Integer.parseInt(request.getParameter("idartic"));
+        /*
+        CArticulos ca=new CArticulos();
+        if (ca.deletArtic(idartic)) {
+            response.getWriter().println("Producto eliminado"
+                    + "xd");
+            
+        } else {
+            response.getWriter().println("Error recontra gil"
+                    + "xd");
+        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

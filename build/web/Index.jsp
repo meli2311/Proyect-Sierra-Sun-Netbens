@@ -223,10 +223,11 @@
                                   </button>
                               </div>
                               <div class="modal-body">
+                                  <!--Form de CRUD-->
                                   <form class="needs-validation" method="POST" enctype="multipart/form-data" action="CArticol" name="frmnew" id="" novalidate>
                                       <div class="form-row">
                                           <div class="col-md-6 mb-3">
-                                              <label for="validationCustom01">Nombre</label>
+                                              <label for="Nombre">Nombre</label>
                                               <input type="text" class="form-control" id="Nombre" name="Nombre" required>
                                               <div class="valid-feedback">
                                                   Correcto
@@ -236,7 +237,7 @@
                                               </div>
                                           </div>
                                           <div class="col-md-6 mb-3">
-                                              <label for="validationCustom03">Estado</label>
+                                              <label for="Estado">Estado</label>
                                               <input type="text" class="form-control" id="Estado" name="Estado" required>
                                               <div class="invalid-feedback">
                                                   Describa el estado del producto.
@@ -245,14 +246,14 @@
                                       </div>
                                       <div class="form-row">
                                           <div class="col-md-6 mb-3">
-                                              <label for="validationCustom03">Costo unitario</label>
+                                              <label for="Costo_Unitario">Costo unitario</label>
                                               <input type="text" class="form-control" id="Costo_Unitario" name="Costo_Unitario" required>
                                               <div class="invalid-feedback">
                                                   Indicque el costo.
                                               </div>
                                           </div>
                                           <div class="col-md-3 mb-3">
-                                              <label for="validationCustom04">Stock</label>
+                                              <label for="Stock">Stock</label>
                                               <select class="custom-select" id="Stock" name="Stock" required>
                                                   <%for (int i = 1; i <= 1000; i++) {%>
                                                   <option selected value="<%= i%>"><%= i%></option>
@@ -263,7 +264,7 @@
                                               </div>
                                           </div>
                                           <div class="col-md-3 mb-3">
-                                              <label for="validationCustom04">Stock Maximo</label>
+                                              <label for="Stock_maximo">Stock Maximo</label>
                                               <select class="custom-select" id="Stock_maximo" name="Stock_maximo" required>
                                                   <option selected disabled value="">Elegir</option>
                                                   <%for (int i = 1; i <= 1000; i++) {%>
@@ -275,11 +276,12 @@
                                               </div>
                                           </div>
                                       </div>
-                                              <button class="btn btn-outline-info" value="CArticol" id="btnnewartic" type="submit">Actualizar</button>
+                                      <button class="btn btn-outline-info" value="CArticol" id="btnNewArtic" type="submit">Actualizar</button>
                                   </form>
+                                  <!--Form de CRUD-->            
                               </div>
                               <div class="modal-footer">
-                                  <button type="button" class="btn btn-outline-info " data-dismiss="modal">Cerrar</button>
+                                  <button function="" type="button" class="btn btn-outline-info " data-dismiss="modal">Cerrar</button>
                                   <button type="button" class="btn btn-outline-info ">Enviar mensaje</button>
                               </div>
                           </div>

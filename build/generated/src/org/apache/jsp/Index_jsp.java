@@ -267,10 +267,11 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                  </button>\n");
       out.write("                              </div>\n");
       out.write("                              <div class=\"modal-body\">\n");
-      out.write("                                  <form class=\"needs-validation\" method=\"POST\" enctype=\"multypsrt/form-data\" action=\"CArticol\" name=\"crearArticulo\" id=\"CrearArt\" novalidate>\n");
+      out.write("                                  <!--Form de CRUD-->\n");
+      out.write("                                  <form class=\"needs-validation\" method=\"POST\" enctype=\"multipart/form-data\" action=\"CArticol\" name=\"frmnew\" id=\"\" novalidate>\n");
       out.write("                                      <div class=\"form-row\">\n");
       out.write("                                          <div class=\"col-md-6 mb-3\">\n");
-      out.write("                                              <label for=\"validationCustom01\">Nombre</label>\n");
+      out.write("                                              <label for=\"Nombre\">Nombre</label>\n");
       out.write("                                              <input type=\"text\" class=\"form-control\" id=\"Nombre\" name=\"Nombre\" required>\n");
       out.write("                                              <div class=\"valid-feedback\">\n");
       out.write("                                                  Correcto\n");
@@ -280,7 +281,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                              </div>\n");
       out.write("                                          </div>\n");
       out.write("                                          <div class=\"col-md-6 mb-3\">\n");
-      out.write("                                              <label for=\"validationCustom03\">Estado</label>\n");
+      out.write("                                              <label for=\"Estado\">Estado</label>\n");
       out.write("                                              <input type=\"text\" class=\"form-control\" id=\"Estado\" name=\"Estado\" required>\n");
       out.write("                                              <div class=\"invalid-feedback\">\n");
       out.write("                                                  Describa el estado del producto.\n");
@@ -289,14 +290,14 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                      </div>\n");
       out.write("                                      <div class=\"form-row\">\n");
       out.write("                                          <div class=\"col-md-6 mb-3\">\n");
-      out.write("                                              <label for=\"validationCustom03\">Costo unitario</label>\n");
+      out.write("                                              <label for=\"Costo_Unitario\">Costo unitario</label>\n");
       out.write("                                              <input type=\"text\" class=\"form-control\" id=\"Costo_Unitario\" name=\"Costo_Unitario\" required>\n");
       out.write("                                              <div class=\"invalid-feedback\">\n");
       out.write("                                                  Indicque el costo.\n");
       out.write("                                              </div>\n");
       out.write("                                          </div>\n");
       out.write("                                          <div class=\"col-md-3 mb-3\">\n");
-      out.write("                                              <label for=\"validationCustom04\">Stock</label>\n");
+      out.write("                                              <label for=\"Stock\">Stock</label>\n");
       out.write("                                              <select class=\"custom-select\" id=\"Stock\" name=\"Stock\" required>\n");
       out.write("                                                  ");
 for (int i = 1; i <= 1000; i++) {
@@ -316,7 +317,7 @@ for (int i = 1; i <= 1000; i++) {
       out.write("                                              </div>\n");
       out.write("                                          </div>\n");
       out.write("                                          <div class=\"col-md-3 mb-3\">\n");
-      out.write("                                              <label for=\"validationCustom04\">Stock Maximo</label>\n");
+      out.write("                                              <label for=\"Stock_maximo\">Stock Maximo</label>\n");
       out.write("                                              <select class=\"custom-select\" id=\"Stock_maximo\" name=\"Stock_maximo\" required>\n");
       out.write("                                                  <option selected disabled value=\"\">Elegir</option>\n");
       out.write("                                                  ");
@@ -337,11 +338,12 @@ for (int i = 1; i <= 1000; i++) {
       out.write("                                              </div>\n");
       out.write("                                          </div>\n");
       out.write("                                      </div>\n");
-      out.write("                                              <button class=\"btn btn-outline-info\" value=\"CArticol\" id=\"btnnewartic\" type=\"submit\">Actualizar</button>\n");
+      out.write("                                      <button class=\"btn btn-outline-info\" value=\"CArticol\" id=\"btnNewArtic\" type=\"submit\">Actualizar</button>\n");
       out.write("                                  </form>\n");
+      out.write("                                  <!--Form de CRUD-->            \n");
       out.write("                              </div>\n");
       out.write("                              <div class=\"modal-footer\">\n");
-      out.write("                                  <button type=\"button\" class=\"btn btn-outline-info \" data-dismiss=\"modal\">Cerrar</button>\n");
+      out.write("                                  <button function=\"\" type=\"button\" class=\"btn btn-outline-info \" data-dismiss=\"modal\">Cerrar</button>\n");
       out.write("                                  <button type=\"button\" class=\"btn btn-outline-info \">Enviar mensaje</button>\n");
       out.write("                              </div>\n");
       out.write("                          </div>\n");
