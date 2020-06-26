@@ -68,6 +68,62 @@ public class ModeloArticulos extends Conexion {
     
     }
     
+    public Articulo getArtic(int idArticulo){
+    Articulo art=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+    
+        try {
+            String sql="select * from articulos where Codigo_A = ?";
+            pst=getConnection().prepareCall(sql);
+            pst.setInt(1, idArticulo);
+            rs=pst.executeQuery();
+            
+            while (rs.next()) {                
+                art=new Articulo(rs.getInt("Codigo_A"),rs.getString("Nombre"),rs.getInt("Stock"), rs.getString("Estado"),rs.getInt("Costo_Unidad"),rs.getInt("Stock_maximo"));
+                
+            }
+        } catch (Exception e) {
+        }finally{
+            try {
+                if (getConnection() !=null) getConnection().close();
+                if (pst !=null) pst.close();
+                if (rs !=null) rs.close();
+            } catch (Exception e) {
+            }
+        }  
+    return art;
+    
+    }
+    
+    
+    public boolean deletArtic(int Codigo_A) {
+        boolean flag = false;
+        PreparedStatement pst = null;
+
+        try {
+            String sql = "call deletArticulo(?)";
+            pst = getConnection().prepareCall(sql);
+            pst.setInt(1, Codigo_A);
+            if (pst.executeUpdate()==1) {
+                flag=true;
+            }
+
+        } catch (Exception e) {
+        } finally {
+            try {
+                if (getConnection() != null) getConnection().close();
+                if (pst != null) pst.close();
+            } catch (Exception e) {
+            }
+        }
+
+        return flag;
+
+    }
+    
+    
+    
     
     
     

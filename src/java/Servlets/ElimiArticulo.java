@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Renzo
  */
-public class ElimiArtic extends HttpServlet {
+public class ElimiArticulo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,18 +31,17 @@ public class ElimiArtic extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        int idartic= Integer.parseInt(request.getParameter("idartic"));
-        /*
+        
+        int idartic= Integer.parseInt(request.getParameter("idArtic"));
+        
         CArticulos ca=new CArticulos();
-        if (ca.deletArtic(idartic)) {
-            response.getWriter().println("Producto eliminado"
-                    + "xd");
+        if (ca.deletArticulo(idartic)) {
+            response.getWriter().println("Producto eliminado so mongol");
             
         } else {
-            response.getWriter().println("Error recontra gil"
-                    + "xd");
-        }*/
+            response.getWriter().println("Error recontra gil");
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

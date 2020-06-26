@@ -44,8 +44,8 @@ $(document).ready(function() {
 
 
 /*Scripsts boutons tables validations*/
-(function () {
-   'use strict';
+$(function () {
+    'use strict';
     window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
@@ -56,11 +56,55 @@ $(document).ready(function() {
                     event.preventDefault();
                     event.stopPropagation();
                 }
+                if (form.checkValidity() === true) {
+                    var data = new FormData($('#frmnew')[0]);
+                    $.ajax({
+                        url: "CArticol",
+                        type: "post",
+                        data: data,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            alert(data);
+                        }
+                    });
+                }
                 form.classList.add('was-validated');
             }, false);
         });
     }, false);
-})();
+});
 
-/*art.add(new Articulo(rs.getInt("Codigo_A"),rs.getString("Nombre"),rs.getInt("Stock"), rs.getString("Estado"),rs.getInt("Costo_Unidad"),rs.getInt("Stock_maximo")));*/
+
+$(function () {
+    $('tr #btnDelet').click(function (e) {
+        e.preventDefault();
+        var opcion = confirm("Desea eliminar el articulo"); 
+        if (opcion) {
+            var fila=$(this).parent().parent();
+            var idArtic = fila.find('#id_Artic').text();
+            var data = {idArtic:idArtic};
+            $.post("DeletArticol", data, function(res, est, jqXHR) {
+                alert(res);
+                fila.remove();
+            });
+        }
+
+    });
+});
+
+
+/*
+
+$('#EditModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget); // Button that triggered the modal
+  var recipient = button.data('whatever'); // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this);
+  modal.find('.modal-title').text('Formulario para ' + recipient);
+});
+*/
+
+
 /*Scripsts boutons tables validations end*/

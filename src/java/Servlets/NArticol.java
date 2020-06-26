@@ -57,7 +57,11 @@ public class NArticol extends HttpServlet {
        
        CArticulos ca=new CArticulos();
        
-       response.getWriter().println(ca.crearArticulo(art));
+        if (ca.crearArticulo(art)) {
+            response.getWriter().println("Producto Creado");
+        } else {
+            response.getWriter().println("Eres un gil xd");
+        }
        
     }
 
