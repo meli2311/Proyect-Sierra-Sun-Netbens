@@ -8,6 +8,10 @@
         <servlet-name>NArticol</servlet-name>
         <servlet-class>Servlets.NArticol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ElimiArticulo</servlet-name>
+        <servlet-class>Servlets.ElimiArticulo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NArtic</servlet-name>
         <url-pattern>/CrearArt</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>NArticol</servlet-name>
         <url-pattern>/CArticol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ElimiArticulo</servlet-name>
+        <url-pattern>/DeletArticol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

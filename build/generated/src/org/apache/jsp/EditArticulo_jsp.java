@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import Controlador.CArticulos;
 
-public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class EditArticulo_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -50,7 +50,6 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <!--Required meta tags-->\n");
       out.write("  <meta charset=\"utf-8\">\n");
       out.write("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n");
-      out.write("  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n");
       out.write("  <!--Bootstrap CSS -->\n");
       out.write("  <link rel=\"stylesheet\" href=\"Boostrap\\css\\bootstrap.min.css\">\n");
       out.write("  <!--Custom styles-->\n");
@@ -66,7 +65,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <div class=\"d-flex\" id=\"content-wrapper\">\n");
       out.write("\n");
       out.write("    <!-- Sidebar -->\n");
-      out.write("    <div id=\"sidebar-container\" class=\"border-right\">\n");
+      out.write("    <div id=\"sidebar-container\" class=\"border-right\" style=\"background-image: url(assets/img/sidebarContainer.jpg) !important; background-size:130% ;\">\n");
       out.write("      <div class=\"logo\">\n");
       out.write("        <img id=\"icon-sidebar\" src=\"assets\\img\\Icon.png\">\n");
       out.write("      </div>\n");
@@ -148,7 +147,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <section class=\"py-3\">\n");
       out.write("          <!-- Graphic -->\n");
       out.write("          <div class=\"row\">\n");
-      out.write("              <div class=\"card card-chart bg-dark\" id=\"Graphic-card\">\n");
+      out.write("            <div class=\"card card-chart bg-dark\" id=\"Graphic-card\">\n");
       out.write("              <div class=\"card-header\">\n");
       out.write("                <div class=\"row\" style=\"color: white;\">\n");
       out.write("                  <div class=\"col-sm-6\">\n");
@@ -264,107 +263,27 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("            <!--message bar-->\n");
       out.write("\n");
-      out.write("          </div>\n");
-      out.write("          \n");
-      out.write("\n");
+      out.write("          </div>          \n");
       out.write("\n");
       out.write("          <!-- Table2 -->\n");
-      out.write("          <div class=\"row mb-5\" style=\"background:\">\n");
-      out.write("              <div class=\"col-lg-12\">\n");
-      out.write("                  <button type=\"button\" class=\"btn btn-outline-info text-white\" data-toggle=\"modal\" data-whatever=\"Nuevo Articulo\" data-target=\"#NewModal\">Nuevo</button>\n");
-      out.write("                  <div class=\"modal fade\" id=\"NewModal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
-      out.write("                      <div class=\"modal-dialog \">\n");
-      out.write("                          <div class=\"modal-content  bg-dark\">\n");
-      out.write("                              <div class=\"modal-header\">\n");
-      out.write("                                  <h5 class=\"modal-title text-white\" id=\"exampleModalLabel\">Nuevo</h5>\n");
-      out.write("                                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n");
-      out.write("                                      <span aria-hidden=\"true\">&times;</span>\n");
-      out.write("                                  </button>\n");
-      out.write("                              </div>\n");
-      out.write("                              <div class=\"modal-body\">\n");
-      out.write("                                  <!--Form de CRUD-->\n");
-      out.write("                                  <form class=\"needs-validation\" method=\"POST\" enctype=\"multipart/form-data\" action=\"CArticol\" name=\"frm_new\" id=\"frmnew\" novalidate>\n");
-      out.write("                                      <div class=\"form-row\">\n");
-      out.write("                                          <div class=\"col-md-6 mb-3 text-white\">\n");
-      out.write("                                              <label for=\"Nombre\">Nombre</label>\n");
-      out.write("                                              <input type=\"text\" class=\"form-control\" id=\"Nombre\" name=\"Nombre\" required>\n");
-      out.write("                                              <div class=\"valid-feedback\">\n");
-      out.write("                                                  Correcto\n");
-      out.write("                                              </div>\n");
-      out.write("                                              <div class=\"invalid-feedback\">\n");
-      out.write("                                                  Indique el nombre\n");
-      out.write("                                              </div>\n");
-      out.write("                                          </div>\n");
-      out.write("                                          <div class=\"col-md-6 mb-3 text-white\">\n");
-      out.write("                                              <label for=\"Estado\">Estado</label>\n");
-      out.write("                                              <input type=\"text\" class=\"form-control\" id=\"Estado\" name=\"Estado\" required>\n");
-      out.write("                                              <div class=\"invalid-feedback\">\n");
-      out.write("                                                  Describa el estado del producto.\n");
-      out.write("                                              </div>\n");
-      out.write("                                          </div>\n");
-      out.write("                                      </div>\n");
-      out.write("                                      <div class=\"form-row\">\n");
-      out.write("                                          <div class=\"col-md-6 mb-3 text-white\">\n");
-      out.write("                                              <label for=\"Costo_Unitario\">Costo unitario</label>\n");
-      out.write("                                              <input type=\"text\" class=\"form-control\" id=\"Costo_Unitario\" name=\"Costo_Unitario\" required>\n");
-      out.write("                                              <div class=\"invalid-feedback\">\n");
-      out.write("                                                  Indicque el costo.\n");
-      out.write("                                              </div>\n");
-      out.write("                                          </div>\n");
-      out.write("                                          <div class=\"col-md-3 mb-3 text-white\">\n");
-      out.write("                                              <label for=\"Stock\">Stock</label>\n");
-      out.write("                                              <input type=\"number\" class=\"form-control\" id=\"Stock\" name=\"Stock\" required>\n");
-      out.write("                                              <div class=\"invalid-feedback\">\n");
-      out.write("                                                  Indique el stock.\n");
-      out.write("                                              </div>\n");
-      out.write("                                          </div>\n");
-      out.write("                                          <div class=\"col-md-3 mb-3 text-white\">\n");
-      out.write("                                              <label for=\"Stock_maximo\">Stock Maximo</label>\n");
-      out.write("                                              <input type=\"number\" class=\"form-control\" id=\"Stock_maximo\" name=\"Stock_maximo\" required>\n");
-      out.write("                                              <div class=\"invalid-feedback\">\n");
-      out.write("                                                  Indique el stock maximo.\n");
-      out.write("                                              </div>\n");
-      out.write("                                          </div>\n");
-      out.write("                                      </div>\n");
-      out.write("                                      <button class=\"btn btn-outline-info\" value=\"BtnCrear\" id=\"btnNewArtic\" type=\"submit\">Crear</button>\n");
-      out.write("                                  </form>\n");
-      out.write("                                  <!--Form de CRUD-->            \n");
-      out.write("                              </div>\n");
-      out.write("                              <div class=\"modal-footer\">\n");
-      out.write("                                  <button function=\"\" type=\"button\" class=\"btn btn-outline-info \" data-dismiss=\"modal\">Cerrar</button>\n");
-      out.write("                                  <button type=\"button\" class=\"btn btn-outline-info \">Enviar mensaje</button>\n");
-      out.write("                              </div>\n");
-      out.write("                          </div>\n");
+      out.write("          <center>\n");
+      out.write("              <div class=\"container mb-5\" style=\"background:\">\n");
+      out.write("                  <div class=\"col-lg-7 text-white bg-dark \">\n");
+      out.write("                      <div class=\"d-flex justify-content-center border-2 mr-2\">\n");
+      out.write("                          ");
+
+                              CArticulos ca = new CArticulos();
+                              int idart= Integer.parseInt(request.getParameter("id"));
+                          
+      out.write("\n");
+      out.write("                          ");
+      out.print( ca.EditArticulo(idart));
+      out.write("   \n");
       out.write("                      </div>\n");
       out.write("                  </div>\n");
-      out.write("                  <div class=\"table-responsive\">\n");
-      out.write("                      <table id=\"table1\" class=\"table table-striped table-bordered bg-dark text-white\">\n");
-      out.write("                          <thead class=\"shorting-1\">\n");
-      out.write("                              <tr class=\"cell-border\">\n");
-      out.write("                                  <th>Id_Articulo</th>\n");
-      out.write("                                  <th>Nombre</th>\n");
-      out.write("                                  <th>Stock</th>\n");
-      out.write("                                  <th>Estado</th>\n");
-      out.write("                                  <th>Costo unitario</th>\n");
-      out.write("                                  <th>Stock maximo</th>\n");
-      out.write("                                  <th>Acciones</th>\n");
-      out.write("                              </tr>\n");
-      out.write("                          </thead>\n");
-      out.write("                          <tbody class=\"bg-dark text-white\">\n");
-      out.write("                              ");
-
-                                  CArticulos ca = new CArticulos();
-                              
-      out.write("\n");
-      out.write("                              ");
-      out.print( ca.getViewArticol());
-      out.write("        \n");
-      out.write("\n");
-      out.write("                         </tbody>\n");
-      out.write("                      </table>\n");
-      out.write("                  </div>\n");
       out.write("              </div>\n");
-      out.write("          </div>\n");
+      out.write("          </center>\n");
+      out.write("\n");
       out.write("          <!-- Table2 end -->\n");
       out.write("                   \n");
       out.write("        </section>\n");
@@ -388,7 +307,6 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <!--icons-->\n");
       out.write("  <script src='https://kit.fontawesome.com/a076d05399.js'></script>\n");
       out.write("</body>\n");
-      out.write("\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
